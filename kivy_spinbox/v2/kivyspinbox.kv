@@ -1,0 +1,18 @@
+<KivySpinbox>:
+    BoxLayout:
+
+        GridLayout:
+            cols: 2
+            rows: 1
+        Label:
+            id: label_id 
+            text: str(root.spin_value)
+            
+        BoxLayout:
+            orientation: 'vertical' 
+            Button:
+                text: "+"
+                on_press: root.value_add()
+            Button:
+                text: "-"
+                on_press: root.value_minus()
