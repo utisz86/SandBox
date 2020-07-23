@@ -1,0 +1,28 @@
+#:kivy 1.0
+#:import GPIO RPi.GPIO
+
+<GPIOInputButton>:
+
+<GPIOPressButton>:
+
+<Monitor>:
+	GridLayout:
+		cols: 5
+		padding: 30
+		spacing: 30
+		size: self.parent.size
+		row_default_height: 150
+
+		GPIOInputButton:
+			id: btn_input
+			text: 'Input'
+			pin: 22
+			direction: GPIO.IN
+			pull_up_down: GPIO.PUD_UP
+
+		GPIOPressButton:
+			id: btn_beep
+			text: 'BEEP!'
+			pin: 17
+			direction: GPIO.OUT
+			value: GPIO.LOW

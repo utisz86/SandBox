@@ -15,7 +15,8 @@ class GuiApp(App):
     def build(self):
         g = Gui()
         for i in range(120):
-            g.grid.add_widget(KivySpinbox())
+            spin = KivySpinbox()
+            g.grid.add_widget(spin)
         return g
 
 class Gui(BoxLayout):
