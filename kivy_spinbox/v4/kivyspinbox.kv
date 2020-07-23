@@ -1,0 +1,28 @@
+<KivySpinbox>:
+    pos: self.pos
+    BoxLayout:
+        GridLayout:
+            cols: 2
+            rows: 1
+            
+        Label:
+            id: label_id 
+            text: str(root.spin_value)
+            text_size: self.width, None
+            size_hint: 1, None
+            height: self.texture_size[1]
+            
+        BoxLayout:
+            orientation: 'vertical' 
+            Button:
+                text: "+"
+                on_press: root.value_add()
+                text_size: self.width, None
+                size_hint: 1, None
+                height: self.texture_size[1]                
+            Button:
+                text: "-"
+                on_press: root.value_minus()
+                text_size: self.width, None
+                size_hint: 1, None
+                height: self.texture_size[1]                
