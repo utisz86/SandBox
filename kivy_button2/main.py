@@ -11,10 +11,10 @@ class MyButton(Button):
     spin_value = NumericProperty(0)
 
     def on_touch_down(self, touch):
-        if touch.is_double_tap:
+        if touch.is_double_tap and touch.double_tap_time < 1500:
             if self.spin_value > 0:
-                self.spin_value -= 1
-                print("Two click{0}".format(self.spin_value))
+                self.spin_value -= 2
+            print("Two click{0}".format(self.spin_value))
         else:
             self.spin_value += 1
             print("One click{0}".format(self.spin_value))
