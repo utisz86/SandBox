@@ -7,13 +7,15 @@ from kivy.uix.button import Button
 from kivy.properties import ObjectProperty, StringProperty, NumericProperty
 
 class MyButton(Button):
-
+    
     spin_value = NumericProperty(0)
 
     def on_touch_down(self, touch):
         if touch.is_double_tap and touch.double_tap_time < 1500:
-            if self.spin_value > 0:
+            if self.spin_value >= 2:
                 self.spin_value -= 2
+            else:
+                self.spin_value -= 1
             print("Two click{0}".format(self.spin_value))
         else:
             self.spin_value += 1
@@ -23,7 +25,7 @@ class MyButton(Button):
 class MyApp(App):
 
     def build(self):
-        return MyButton(text='0')
+        return MyButton()
 
 
 if __name__ == '__main__':
